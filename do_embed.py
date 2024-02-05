@@ -1,14 +1,16 @@
+from typing import List
 from openai import OpenAI
 from numpy.typing import NDArray, ArrayLike
 from numpy import float64 as f64
 from numpy.linalg import norm
 from pickle import dump as pdump
+from numpy import array as nparray
 
 client = OpenAI()
 
 
-def normalize(embed: ArrayLike) -> NDArray[f64]:
-    return embed / norm(embed)
+def normalize(embed: ArrayLike | List[float]) -> NDArray[f64]:
+    return nparray(embed) / norm(embed)
 
 
 if __name__ == "__main__":
