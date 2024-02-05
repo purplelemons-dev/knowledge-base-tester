@@ -1,0 +1,5 @@
+/*.pkl
+/.mypy*
+/__pycache__
+/corpus_folder
+/corpus.txt
